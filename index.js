@@ -1,52 +1,60 @@
-var product1 = document.getElementById("product1")
-            var qty1 = document.getElementById("qty1")
-            var price1 = document.getElementById("price1")
-
-            var product2 = document.getElementById("product2")
-            var qty2 = document.getElementById("qty2")
-            var price2 = document.getElementById("price2")
-
-            var carts = document.getElementById("carts")
-            var total = document.getElementById("total")
-            var cash = document.getElementById("cash")
-            var change = document.getElementById("change")
-
-            function addOrder() {
-                carts.textContent=""
-                if (parseFloat(qty1.value) > 0){
-                    var order = qty1.value.toString() + ' pc/s x ' + price1.textContent + '------'+ product1.textContent + '------ Php' + (parseFloat(qty1.value)*parseFloat(price1.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
-                }
-                if (parseFloat(qty2.value) > 0){
-                    var order = qty2.value.toString() + ' pc/s x ' + price2.textContent + '------' + product2.textContent + '------ Php' + (parseFloat(qty2.value)*parseFloat(price2.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
+<script>
+        var products = [
+        { id: 1, name: "Vans SK8-Low Skate Shoes", price: 2470.00 },
+        { id: 2, name: "Vans ComfyCush Checkerboard Slip", price: 2660.00 },
+        { id: 3, name: "Vans X Stranger", price: 3405.00 },
+        { id: 4, name: "Vans Aloha Old Skool Sneakers", price: 3395.00 },
+        { id: 5, name: "Vans SK8-Hi Skate Shoes", price: 3420.00 },
+        { id: 6, name: "Vans SK8-Hi Wide High Tops", price: 3040.00 },
+        { id: 7, name: "Vans Half Cab Skate", price: 2850.00 },
+        { id: 8, name: "Vans Daz Skate Half Cab Skate", price: 3040.00 },
+        { id: 9, name: "Vans Suede Skate Shoes", price: 3395.00 }
+    ];
+    
+    
+    var qtyInputs = document.querySelectorAll('[id^="qty"]');
+    var carts = document.getElementById("carts");
+    var totalInput = document.getElementById("total");
+    var cashInput = document.getElementById("cash");
+    var changeInput = document.getElementById("change");
+    
+    
+    qtyInputs.forEach(function(qtyInput) {
+        qtyInput.addEventListener("input", addOrder);
+    });
+    
+    cashInput.addEventListener("input", calculateChange);
+    
+    
+    function addOrder() {
+        carts.textContent = ""; // Clear previous cart content
+    
+        var total = 0;
+    
+        qtyInputs.forEach(function(qtyInput, index) {
+            var qty = parseFloat(qtyInput.value);
+            if (qty > 0) {
+                var product = products[index];
+                var order = qty + " pcs x " + product.name + " - Php " + (qty * product.price).toFixed(2) + "\n";
+                carts.textContent += order;
+                total += qty * product.price;
             }
-           if (parseFloat(qty3.value) > 0){
-                    var order = qty3.value.toString() + ' pc/s x ' + price3.textContent + '------' + product3.textContent + '------ Php' + (parseFloat(qty3.value)*parseFloat(price3.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
-            }
-            if (parseFloat(qty4.value) > 0){
-                    var order = qty4.value.toString() + ' pc/s x ' + price4.textContent + '------' + product4.textContent + '------ Php' + (parseFloat(qty4.value)*parseFloat(price4.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
-            }
-            if (parseFloat(qty5.value) > 0){
-                    var order = qty5.value.toString() + ' pc/s x ' + price5.textContent + '------' + product5.textContent + '------ Php' + (parseFloat(qty5.value)*parseFloat(price5.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
-            }
-            if (parseFloat(qty6.value) > 0){
-                    var order = qty6.value.toString() + ' pc/s x ' + price6.textContent + '------' + product6.textContent + '------ Php' + (parseFloat(qty6.value)*parseFloat(price6.textContent)) + '\n'
-                    //carts.textContent += carts.value.toString() + "\n";
-                    carts.textContent += order
-            }
-            }
-            qty1.addEventListener("keyup", addOrder);
-            qty2.addEventListener("keyup", addOrder);
-            qty3.addEventListener("keyup", addOrder);
-            qty4.addEventListener("keyup", addOrder);
-            qty5.addEventListener("keyup", addOrder);
-            qty6.addEventListener("keyup", addOrder);
+        });
+    
+        totalInput.value = total.toFixed(2); // Update total
+        calculateChange(); // Recalculate change
+    }
+    
+    
+    function calculateChange() {
+        var total = parseFloat(totalInput.value);
+        var cash = parseFloat(cashInput.value);
+    
+        if (!isNaN(total) && !isNaN(cash)) {
+            var change = cash - total;
+            changeInput.value = change.toFixed(2);
+        } else {
+            changeInput.value = "";
+        }
+    }
+    </script>
