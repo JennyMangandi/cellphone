@@ -6,9 +6,7 @@
         { id: 4, name: "Oppo", price: 13000.00 },
         { id: 5, name: "Samsung", price: 15000.00 },
         { id: 6, name: "IPhone", price: 20000.00 },
-        { id: 7, name: "Vans Half Ca", price: 2850.00 },
-        { id: 8, name: "Vans Daz Skate Half Cab Skate", price: 3040.00 },
-        { id: 9, name: "Vans Suede Skate Shoes", price: 3395.00 }
+       
     ];
     
     
