@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-               <h2> Jeng's Cellshop </h2>
+                <h2>Jeng's Cellshop</h2>
                 <hr class="hr" />
                 </div>
             </div>
@@ -51,28 +51,33 @@
                         <img src="iPhones-Brand-Banner-900x800.jpg" style="width:500px;height: 300px;" class="img-thumbnail"/><br>
                         <label for="product6" id="price6">20,000.00</label>
                         <input type="number" class="form-control" id="qty6" placeholder="Enter quantity"/><br>
-                </div>
-                <div class="col-4">
+
+               <div class="col-4">
                         <label for="carts"> Orders </label><br>
                         <textarea class="form-control" rows="29" id="carts" cols="200" readonly style="width: 350px;height: 400px;font-size: 12px;"></textarea>
                         <input type="text" class="form-control border-0" id="total" readonly placeholder="Total"/>
                         <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
                         <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/>
                         
-                </div>
+               </div>
             </div>
-        </div>
+            </div>
+     <br><br>
+       <div class="card text-center">
+      <div class="card-footer text-body-secondary">
+      Owned By Iverson Benitez, BSIT-3D
+    </div>
+    </div>
 
-      var products = [
+      <script>
+           var products = [
         { id: 1, name: "Motorola", price: 10000.00 },
         { id: 2, name: "Nokia", price: 10500.00 },
         { id: 3, name: "Infinix", price: 12000.00 },
         { id: 4, name: "Oppo", price: 13000.00 },
         { id: 5, name: "Samsung", price: 15000.00 },
         { id: 6, name: "IPhone", price: 20000.00 },
-        { id: 7, name: "Vans Half Cab Skate", price: 2850.00 },
-        { id: 8, name: "Vans Daz Skate Half Cab Skate", price: 3040.00 },
-        { id: 9, name: "Vans Suede Skate Shoes", price: 3395.00 }
+        
     ];
     
     
@@ -121,14 +126,6 @@
             changeInput.value = "";
         }
     }
-      </script>
-
-<script src="index.js"></script>
-     <br><br>
-       <div class="card text-center">
-      <div class="card-footer text-body-secondary">
-        <div class="badge text-bg-info">Info</div>
-         Owned By: JENNY MANGANDI
-      
-    </div>
-    </div>
+    </script>
+</body>
+</html>
