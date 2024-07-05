@@ -1,12 +1,12 @@
 <script>
         var products = [
-        { id: 1, name: "Vans SK8-Low Skate Shoes", price: 2470.00 },
-        { id: 2, name: "Vans ComfyCush Checkerboard Slip", price: 2660.00 },
-        { id: 3, name: "Vans X Stranger", price: 3405.00 },
-        { id: 4, name: "Vans Aloha Old Skool Sneakers", price: 3395.00 },
-        { id: 5, name: "Vans SK8-Hi Skate Shoes", price: 3420.00 },
-        { id: 6, name: "Vans SK8-Hi Wide High Tops", price: 3040.00 },
-        { id: 7, name: "Vans Half Cab Skate", price: 2850.00 },
+        { id: 1, name: "Motorola", price: 10000.00 },
+        { id: 2, name: "Nokia", price: 10500.00 },
+        { id: 3, name: "Infinix", price: 12000.00 },
+        { id: 4, name: "Oppo", price: 13000.00 },
+        { id: 5, name: "Samsung", price: 15000.00 },
+        { id: 6, name: "IPhone", price: 20000.00 },
+        { id: 7, name: "Vans Half Ca", price: 2850.00 },
         { id: 8, name: "Vans Daz Skate Half Cab Skate", price: 3040.00 },
         { id: 9, name: "Vans Suede Skate Shoes", price: 3395.00 }
     ];
